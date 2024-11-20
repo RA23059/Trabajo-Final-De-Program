@@ -1,0 +1,13 @@
+CREATE TABLE personajes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    universo INTEGER NOT NULL,
+    imagen_url VARCHAR(255)
+);
+
+-- Ejemplo de datos para el universo 11
+INSERT INTO personajes (nombre, universo, imagen_url) VALUES
+    ('Jiren', 11, '/static/img/jirenU11.jpeg'),
+    ('Toppo', 11, '/static/img/toppoU11.jpeg'),
+    ('Cocotte', 11, '/static/img/cocotteU11.jpeg'),
+    ('Vuon', 11, '/static/img/vuonU11.jpeg');
