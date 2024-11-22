@@ -8,15 +8,23 @@
     <title>Zeno-sama Tableta</title>
 </head>
 <body>
-    <div class="tableta">
-        <div class="marco-tableta">
-            <div class="pantalla-tableta">
-                <div class="circulo-menu">
-                    <div class="icono-central">
-                        <div class="menu">
-                            <button class="palanca" aria-label="Toggle Menu">
-                                <ion-icon name="infinite-outline"></ion-icon>
-                            </button>
+
+    <div class="menu-container">
+        <div class="tableta">
+            <div class="marco-tableta">
+                <div class="pantalla-tableta">
+                    <!-- Botón Circular en la Pantalla -->
+                    <button class="navigate-button-circle" onclick="window.location.href='/personajes';" aria-label="Ver Personajes">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </button>
+                    <!-- Menú Circular -->
+                    <div class="circulo-menu">
+                        <div class="icono-central">
+                            <div class="menu">
+                                <button class="palanca" aria-label="Toggle Menu">
+                                    <ion-icon name="infinite-outline"></ion-icon>
+                                </button>
+                            
                             <ul>
                                 <li style="--i:0">
                                     <a href="{{ url_for('universo_11') }}" aria-label="Universo 11">
