@@ -24,6 +24,10 @@ app = Flask(__name__)
 def home():
     return render_template('Trabajo_fin.html')
 
+@app.route('/personajes')
+def personajes():
+    return render_template('personajes.html')
+
 @app.route('/universo_11')
 def universo_11():
     return render_template('universo_11.html')

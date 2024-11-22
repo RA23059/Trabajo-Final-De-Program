@@ -3,36 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/styles.css">
     <title>Todos los Personajes</title>
+    <style>
+        :root {
+            --primary-color: #00f7ff;
+            --secondary-color: #0051ff;
+            --background-start: #000428;
+            --background-end: #004e92;
+            --card-width: 180px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .universe-container {
+            width: 90%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .tablet-container {
+            border: 8px solid #222;
+            border-radius: 30px;
+            background: #1a1a1a;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .universe-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .universe-image {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+
+        .universe-image img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .universe-title {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .character-card {
+            width: var(--card-width);
+            background: #222;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .character-card img {
+            width: 100%;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .character-card h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .character-card span {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .character-card:hover span {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="menu">
-            <a href="/" class="logo"><img src="/static/images/universo_logo.png" alt="Universo Logo"></a>
-            <nav>
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/personajes">Todos los Personajes</a></li>
-                    <li><a href="/universo_11">Universo 11</a></li>
-                    <li><a href="/universo_7">Universo 7</a></li>
-                    <li><a href="/universo_6">Universo 6</a></li>
-                </ul>
-            </nav>
+    <a href="/" class="back-button">Inicio</a>
+    <h1>Lista de Personajes por Universo</h1>
+    <!-- Repetir el bloque de universe-container para cada universo -->
+    <div class="universe-container">
+        <div class="universe-header">
+            <div class="universe-image">
+                <img src="https://via.placeholder.com/150" alt="Universo 1">
+            </div>
+            <div class="universe-title">Universo 2</div>
         </div>
-    </header>
-    <main>
-        <h1>Lista de Todos los Personajes</h1>
-        <div class="character-list">
-            {% for character in characters %}
-                <div class="character">
-                    <img src ```html
-                    <img src="{{ character[1] }}" alt="{{ character[0] }}">
-                    <h2>{{ character[0] }}</h2>
-                    <p>Universo: {{ character[2] }}</p>
+        <div class="tablet-container">
+            <div class="character-grid">
+                <!-- Personajes del Universo 2 -->
+                <div class="character-card">
+                    <img src="https://via.placeholder.com/150" alt="Personaje 1">
+                    <h2>Personaje 1</h2>
+                    <span>Universo 2</span>
                 </div>
-            {% endfor %}
+                <div class="character-card">
+                    <img src="https://via.placeholder.com/150" alt="Personaje 2">
+                    <h2>Personaje 2</h2>
+                    <span>Universo 2</span>
+                </div>
+                <!-- Repetir para completar 10 personajes -->
+            </div>
         </div>
-    </main>
+    </div>
+
+    <div class="universe-container">
+        <div class="universe-header">
+            <div class="universe-image">
+                <img src="https://via.placeholder.com/150" alt="Universo 2">
+            </div>
+            <div class="universe-title">Universo 3</div>
+        </div>
+        <div class="tablet-container">
+            <div class="character-grid">
+                <!-- Personajes del Universo 3 -->
+                <div class="character-card">
+                    <img src="https://via.placeholder.com/150" alt="Personaje 1">
+                    <h2>Personaje 1</h2>
+                    <span>Universo 3</span>
+                </div>
+                <div class="character-card">
+                    <img src="https://via.placeholder.com/150" alt="Personaje 3">
+                    <h2>Personaje 2</h2>
+                    <span>Universo 3</span>
+                </div>
+                <!-- Repetir para completar 10 personajes -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Repetir para Universos 3 al 8 -->
 </body>
 </html>
