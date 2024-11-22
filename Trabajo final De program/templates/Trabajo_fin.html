@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zeno-sama Tablet Interface">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Zeno-sama Tableta</title>
 </head>
@@ -13,20 +14,61 @@
                 <div class="circulo-menu">
                     <div class="icono-central">
                         <div class="menu">
-                            <div class="palanca">
-                                <ion-icon name="nuclear-outline"></ion-icon>
-                            </div>
-                            <li style="--i:0;"><a href="{{ url_for('universo_11') }}"><img src="https://pm1.aminoapps.com/7549/c4a96a1497fb56fae33718aacfd4576b74bf1846r1-465-466v2_128.jpg" alt=""></a></li>
-                            <li style="--i:1;"><a href="{{ url_for('universo_2') }}"><img src="https://pm1.aminoapps.com/7548/6dc5e0f226f026e7a23172a74e6cdffb0178ba36r1-465-466v2_128.jpg" alt=""></a></li>
-                            <li style="--i:2;"><a href="{{ url_for('universo_3') }}"><img src="https://i.pinimg.com/564x/a6/f7/1f/a6f71f7f47824193582e9c7d30b0bd72.jpg"></a></li>
-                            <li style="--i:3;"><a href="{{ url_for('universo_4') }}"><img src="https://pm1.aminoapps.com/7545/eb8b15d49164cf84f384483dbfa69cda8b93303ar1-360-360v2_128.jpg"></a></li>
-                            <li style="--i:4;"><a href="{{ url_for('universo_6') }}"><img src="https://pm1.aminoapps.com/7542/fe1970d53cb6e1ca48d9187ee523f774bcafade7r1-467-466v2_128.jpg"></a></li>
-                            <li style="--i:5;"><a href="{{ url_for('universo_7') }}"><img src="https://pm1.aminoapps.com/7543/f5bcc1f98be7f3350547131ffea0c615738eecd7r1-465-466v2_128.jpg"></a></li>
-                            <li style="--i:6;"><a href="{{ url_for('universo_9') }}"><img src="https://pm1.aminoapps.com/7541/50c1e7639cc434d1c5b8d72baae943b47b0e9535r1-465-466v2_128.jpg"></a></li>
-                            <li style="--i:7;"><a href="{{ url_for('universo_10') }}"><img src="https://pm1.aminoapps.com/7546/1c9b4d713c3ceb6b736ddd25eaea2d29367b82f3r1-466-466v2_128.jpg"></ion-icon></a></li>
+                            <button class="palanca" aria-label="Toggle Menu">
+                                <ion-icon name="infinite-outline"></ion-icon>
+                            </button>
+                            <ul>
+                                <li style="--i:0">
+                                    <a href="{{ url_for('universo_11') }}" aria-label="Universo 11">
+                                        <img src="https://pm1.aminoapps.com/7549/c4a96a1497fb56fae33718aacfd4576b74bf1846r1-465-466v2_128.jpg" alt="Universo 11">
+                                        <span>Universo 11</span>
+                                    </a>
+                                </li>
+                                <li style="--i:1">
+                                    <a href="{{ url_for('universo_2') }}" aria-label="Universo 2">
+                                        <img src="https://pm1.aminoapps.com/7548/6dc5e0f226f026e7a23172a74e6cdffb0178ba36r1-465-466v2_128.jpg" alt="Universo 2">
+                                        <span>Universo 2</span>
+                                    </a>
+                                </li>
+                                <li style="--i:2">
+                                    <a href="{{ url_for('universo_3') }}" aria-label="Universo 3">
+                                        <img src="https://i.pinimg.com/564x/a6/f7/1f/a6f71f7f47824193582e9c7d30b0bd72.jpg" alt="Universo 3">
+                                        <span>Universo 3</span>
+                                    </a>
+                                </li>
+                                <li style="--i:3">
+                                    <a href="{{ url_for('universo_4') }}" aria-label="Universo 4">
+                                        <img src="https://pm1.aminoapps.com/7545/eb8b15d49164cf84f384483dbfa69cda8b93303ar1-360-360v2_128.jpg" alt="Universo 4">
+                                        <span>Universo 4</span>
+                                    </a>
+                                </li>
+                                <li style="--i:4">
+                                    <a href="{{ url_for('universo_6') }}" aria-label="Universo 6">
+                                        <img src="https://pm1.aminoapps.com/7542/fe1970d53cb6e1ca48d9187ee523f774bcafade7r1-467-466v2_128.jpg" alt="Universo 6">
+                                        <span>Universo 6</span>
+                                    </a>
+                                </li>
+                                <li style="--i:5">
+                                    <a href="{{ url_for('universo_7') }}" aria-label="Universo 7">
+                                        <img src="https://pm1.aminoapps.com/7543/f5bcc1f98be7f3350547131ffea0c615738eecd7r1-465-466v2_128.jpg" alt="Universo 7">
+                                        <span>Universo 7</span>
+                                    </a>
+                                </li>
+                                <li style="--i:6">
+                                    <a href="{{ url_for('universo_9') }}" aria-label="Universo 9">
+                                        <img src="https://pm1.aminoapps.com/7541/50c1e7639cc434d1c5b8d72baae943b47b0e9535r1-465-466v2_128.jpg" alt="Universo 9">
+                                        <span>Universo 9</span>
+                                    </a>
+                                </li>
+                                <li style="--i:7">
+                                    <a href="{{ url_for('universo_10') }}" aria-label="Universo 10">
+                                        <img src="https://pm1.aminoapps.com/7546/1c9b4d713c3ceb6b736ddd25eaea2d29367b82f3r1-466-466v2_128.jpg" alt="Universo 10">
+                                        <span>Universo 10</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="contenedor-items-menu"></div>
                 </div>
             </div>
         </div>
