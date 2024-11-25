@@ -1,6 +1,6 @@
 import sqlite3
 
-DATABASE = r"./personajes sql (1).db"
+DATABASE = "personajes.db"
 
 def get_universe_characters(universe_id):
     """Obtiene los personajes de un universo específico"""
@@ -13,7 +13,9 @@ def get_universe_characters(universe_id):
                 IFNULL(especie, 'Desconocido'), 
                 IFNULL(rol, 'Desconocido'), 
                 IFNULL(edad, 'Desconocido') 
-            FROM personajes WHERE universo_id = ?
+            FROM personajes 
+            WHERE universo_id = ?
+            ORDER BY nombre
         """, (universe_id,))
         personajes = cursor.fetchall()
         conexion.close()

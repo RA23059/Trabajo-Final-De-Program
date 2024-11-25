@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from database_db import get_universe_characters  # Importación de la función
+from database_db import get_universe_characters
 
 app = Flask(__name__)
 
@@ -7,13 +7,12 @@ app = Flask(__name__)
 def home():
     return render_template('Trabajo_fin.html')
 
-@app.route('/get_universe_characters/<int:number>')
+@app.route('/universo/<int:number>')
 def universo(number):
-    # Llama a la función para obtener los personajes del universo
     characters = get_universe_characters(number)
     return render_template(
-        'universo.html', 
-        universe_number=number, 
+        'universo.html',
+        universe_number=number,
         characters=characters
     )
 
