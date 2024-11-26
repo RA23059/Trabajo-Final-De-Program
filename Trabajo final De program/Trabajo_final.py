@@ -1,32 +1,22 @@
 from flask import Flask, render_template
-from database import init_db, get_universe_characters
+from database_db import get_universe_characters  # Importación de la función
 
 app = Flask(__name__)
-
-
-with app.app_context():
-    init_db()
 
 @app.route('/')
 def home():
     return render_template('Trabajo_fin.html')
 
-@app.route('/universo_<int:number>')
+@app.route('/get_universe_characters/<int:number>')
 def universo(number):
+    # Llama a la función para obtener los personajes del universo
     characters = get_universe_characters(number)
-    return render_template('universo.html', 
-                         universe_number=number,
-                         characters=characters)
+    return render_template(
+        'universo.html', 
+        universe_number=number, 
+        characters=characters
+    )
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('Trabajo_fin.html')
-
-@app.route('/personajes')
-def personajes():
-    return render_template('personajes.html')
 
 @app.route('/universo_11')
 def universo_11():
@@ -58,8 +48,7 @@ def universo_9():
 
 @app.route('/universo_10')
 def universo_10():
-    return render_template('universo_10.html')  
-
+    return render_template('universo_10.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
